@@ -4,39 +4,74 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use App\Components\Recusive;
 
 class CategoryController extends Controller
 {
-    private $htmlSlelect;
-    public function __construct()
+    private $category;
+
+    public function __construct(Category $category)
     {
-        $this->htmlSlelect = '';
+        $this->category = $category;
     }
 
     public function create()
     {
-        $data = Category::all();
-        $htmlOption = $this->categoryRecusive(0);
+        $htmlOption = $this->getCategory($parentId = '');   // chi get ve 1 list category vi parentid=0
         return view('category.add', compact('htmlOption'));
-    }
-
-
-    function categoryRecusive($id, $text = '')
-    {
-        $data = Category::all();
-        foreach ($data as $value) {
-            if ($value['parent_id'] == $id) {
-                $this->htmlSlelect .= "<option>" . $text . $value['name'] . "</option>";
-                $this->categoryRecusive($value['id'], $text. '-');
-            }
-        }
-
-        return $this->htmlSlelect;
-
     }
 
     public function index()
     {
-        return view('category.index');
+        $categories = $this->category->latest()->paginate(5);
+        return view('category.index', compact('categories'));
+    }
+
+    public function store(Request $request)
+    {
+        $this->category->create([
+            'name' => $request->name,
+            'parent_id' => $request->parent_id,
+            'slug' => str_slug($request->name)
+        ]);
+
+        return redirect()->route('categories.index');
+
+    }
+
+    public function getCategory($parentId)
+    {
+        $data = $this->category->all();
+        $recusive = new Recusive($data);
+        $htmlOption = $recusive->categoryRecusive($parentId);
+        return $htmlOption;
+    }
+
+    public function edit($id)
+    {
+        $category = $this->category->find($id);
+        $htmlOption = $this->getCategory($category->parent_id); //get ve list category va selected la cha cua no
+
+        return view('category.edit', compact('category', 'htmlOption'));
+
+    }
+
+    public function update($id, Request $request)
+    {
+        $this->category->find($id)->update([
+            'name' => $request->name,
+            'parent_id' => $request->parent_id,
+            'slug' => str_slug($request->name)
+        ]);
+        return redirect()->route('categories.index');
+
+    }
+
+    public function delete($id)
+    {
+        $this->category->find($id)->delete();
+        return redirect()->route('categories.index');
+
     }
 }
+
