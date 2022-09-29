@@ -84,5 +84,29 @@ Route::prefix('admin')->group(function () {
         ]);
 
     });
+    Route::prefix('product')->group(function () {
+        Route::get('/', [
+            'as' => 'product.index',
+            'uses' => 'ProductController@index'
+        ]);
+        Route::get('/create', [
+            'as' => 'product.create',
+            'uses' => 'ProductController@create'
+        ]);
+        Route::post('/store', [
+            'as' => 'product.store',
+            'uses' => 'ProductController@store'
+        ]);
+        Route::get('/edit/{id}', [
+            'as' => 'product.edit',
+            'uses' => 'ProductController@edit'
+        ]);
 
+    });
+
+});
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });
