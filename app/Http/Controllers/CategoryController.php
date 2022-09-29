@@ -17,14 +17,14 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $htmlOption = $this->getCategory($parentId = '');   // chi get ve 1 list category vi parentid=0
-        return view('category.add', compact('htmlOption'));
+        $htmlOption = $this->getCategory($parentId = '');
+        return view('admin.category.add', compact('htmlOption'));
     }
 
     public function index()
     {
         $categories = $this->category->latest()->paginate(5);
-        return view('category.index', compact('categories'));
+        return view('admin.category.index', compact('categories'));
     }
 
     public function store(Request $request)
@@ -50,9 +50,9 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = $this->category->find($id);
-        $htmlOption = $this->getCategory($category->parent_id); //get ve list category va selected la cha cua no
+        $htmlOption = $this->getCategory($category->parent_id);
 
-        return view('category.edit', compact('category', 'htmlOption'));
+        return view('admin.category.edit', compact('category', 'htmlOption'));
 
     }
 
@@ -71,7 +71,5 @@ class CategoryController extends Controller
     {
         $this->category->find($id)->delete();
         return redirect()->route('categories.index');
-
     }
 }
-
