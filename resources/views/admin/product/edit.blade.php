@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>Add product</title>
+    <title>Edit product</title>
 @endsection
 
 @section('css')
@@ -15,7 +15,7 @@
 
     <div class="content-wrapper">
         @include('partials.content-header', ['name' => 'product', 'key' => 'Edit'])
-        <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
+         <form action="{{ route('product.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -45,7 +45,7 @@
                                 <label>Ảnh đại diện</label>
                                 <input type="file"
                                        class="form-control-file"
-                                       name="feature_image_path"
+                                       name="image_path"
                                 >
                                 <div class="col-md-4 feature_image_container">
                                     <div class="row">
@@ -59,7 +59,7 @@
                                 <input type="file"
                                        multiple
                                        class="form-control-file"
-                                       name="image_path[]"
+                                       name="detail_image_path[]"
                                 >
                                 <div class="col-md-12 container_image_detail">
                                     <div class="row">
@@ -86,7 +86,7 @@
                                 <label>Nhập tags cho sản phẩm</label>
                                 <select name="tags[]" class="form-control tags_select_choose" multiple="multiple">
                                     @foreach($product->tags as $tagItem )
-                                        <option value="{{ $tagItem->id }}" selected>{{ $tagItem->name }}</option>
+                                        <option value="{{ $tagItem->name }}" selected>{{ $tagItem->name }}</option>
                                     @endforeach
 
                                 </select>
