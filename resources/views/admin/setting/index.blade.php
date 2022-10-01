@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ asset('admins/setting/index/index.css') }}">
 @endsection
 
+@section('js')
+    <script src="{{ asset('vendors/sweetAlert2/sweetalert2@9.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admins/main.js') }}"></script>
+@endsection
+
 @section('content')
 
     <div class="content-wrapper">
@@ -38,27 +43,29 @@
                             </thead>
                             <tbody>
 
-{{--                            @foreach($menus as $menu)--}}
+                                @foreach($settings as $setting)
 
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>config key</td>
-                                    <td>config value</td>
+                                    <th scope="row">{{ $setting->id }}</th>
+                                    <td>{{ $setting->config_key }}</td>
+                                    <td>{{ $setting->config_value }}</td>
                                     <td>
+                                        <a href="{{ route('settings.edit', ['id' => $setting->id]) . '?type=' . $setting->type}}"
+                                           class="btn btn-default">Edit
+                                        </a>
                                         <a href=""
-                                           class="btn btn-default">Edit</a>
-                                        <a href=""
-                                           class="btn btn-danger">Delete</a>
-
+                                            data-url="{{ route('settings.delete', ['id' => $setting->id]) }}"
+                                            class="btn btn-danger action_delete">Delete
+                                    </a>
                                     </td>
                                 </tr>
-{{--                            @endforeach--}}
+                            @endforeach
 
                             </tbody>
                         </table>
                     </div>
                     <div class="col-md-12">
-{{--                        {{ $menus->links() }}--}}
+                        {{ $settings->links() }}
                     </div>
 
                 </div>

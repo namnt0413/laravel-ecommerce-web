@@ -154,6 +154,22 @@ Route::prefix('admin')->group(function () {
             'as' => 'settings.create',
             'uses' => 'SettingController@create'
         ]);
+        Route::post('/store', [
+            'as' => 'settings.store',
+            'uses' => 'SettingController@store'
+        ]);
+        Route::get('/edit/{id}', [
+            'as' => 'settings.edit',
+            'uses' => 'SettingController@edit'
+        ]);
+        Route::post('/update/{id}', [
+            'as' => 'settings.update',
+            'uses' => 'SettingController@update'
+        ]);
+        Route::get('/delete/{id}', [
+            'as' => 'settings.delete',
+            'uses' => 'SettingController@delete'
+        ]);
 
     });
 
