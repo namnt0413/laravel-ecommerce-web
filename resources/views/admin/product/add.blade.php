@@ -61,18 +61,22 @@
                                 <div class="form-group">
                                     <label>Ảnh đại diện</label>
                                     <input type="file"
-                                           class="form-control-file"
+                                           class="form-control-file mb-2 preview_image"
                                            name="image_path"
                                     >
+                                    <div class="row image_wrapper">
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Ảnh chi tiết</label>
                                     <input type="file"
                                            multiple
-                                           class="form-control-file"
+                                           class="form-control-file mb-2 preview_image_detail"
                                            name="detail_image_path[]"
                                     >
+                                    <div class="row image_detail_wrapper">
+                                    </div>
                                 </div>
 
 

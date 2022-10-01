@@ -1,4 +1,4 @@
-<div class="content-header">
+<div class="content-header" style="margin-left:300px">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">

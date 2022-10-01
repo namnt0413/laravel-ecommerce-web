@@ -1,6 +1,6 @@
 
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left:300px">
     <form class="form-inline" method="get" action="{{ route('product.search') }}">
 
         <div class="form-group mx-sm-2 mb-2">

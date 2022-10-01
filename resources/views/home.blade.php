@@ -8,7 +8,7 @@
 @section('content')
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="margin-left:300px !important">
         <!-- Content Header (Page header) -->
     @include('partials.content-header', ['name' => 'Home', 'key' => 'home'])
     <!-- /.content-header -->

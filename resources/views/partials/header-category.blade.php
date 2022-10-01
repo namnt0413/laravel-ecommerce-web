@@ -1,6 +1,6 @@
 <div>search form category</div>
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left:300px">
     <!-- Left navbar links -->
 
     <!-- SEARCH FORM -->
