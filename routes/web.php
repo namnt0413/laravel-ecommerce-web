@@ -113,6 +113,10 @@ Route::prefix('admin')->group(function () {
             'as' => 'product.delete',
             'uses' => 'ProductController@delete'
         ]);
+        Route::get('/search', [
+            'as' => 'product.search',
+            'uses' => 'ProductController@search'
+        ]);
 
     });
     Route::prefix('slider')->group(function () {

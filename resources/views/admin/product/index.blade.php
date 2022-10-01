@@ -13,6 +13,10 @@
     <script type="text/javascript" src="{{ asset('admins/main.js') }}"></script>
 @endsection
 
+@section('header')
+@include('partials.header-product')
+@endsection
+
 @section('content')
 
     <div class="content-wrapper">
@@ -64,7 +68,7 @@
                         </table>
                     </div>
                     <div class="col-md-12">
-                        {{ $products->links() }}
+                        {{ $products->appends($_GET)->links() }}
                     </div>
 
                 </div>
