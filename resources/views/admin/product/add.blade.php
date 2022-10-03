@@ -14,7 +14,7 @@
 
 @section('content')
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="margin-left:300px !important">
         @include('partials.content-header', ['name' => 'product', 'key' => 'Add'])
         <div class="col-md-12">
             {{-- @if ($errors->any())

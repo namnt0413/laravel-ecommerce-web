@@ -87,6 +87,7 @@ class ProductController extends Controller
             }
 
             // Insert tags for product
+            $tagIds = [];
             foreach ($request->tags as $tagItem) {
                 // Insert to tags
                 $tagInstance = $this->tag->firstOrCreate(['name' => $tagItem]);
@@ -142,6 +143,7 @@ class ProductController extends Controller
 
             // Insert tags for product
             // dd($request->tags);
+            $tagIds = [];
             if (!empty($request->tags)) {
                 foreach ($request->tags as $tagItem) {
                     // Insert to tags
