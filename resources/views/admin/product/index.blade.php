@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.layouts.admin')
 
 @section('title')
     <title>Product</title>
@@ -14,13 +14,13 @@
 @endsection
 
 @section('header')
-@include('partials.header-product')
+@include('admin.partials.header-product')
 @endsection
 
 @section('content')
 
     <div class="content-wrapper" >
-        @include('partials.content-header', ['name' => 'product', 'key' => 'List'])
+        @include('admin.partials.content-header', ['name' => 'product', 'key' => 'List'])
 
         <div class="content">
             <div class="container-fluid">

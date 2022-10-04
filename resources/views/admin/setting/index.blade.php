@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.layouts.admin')
 
 @section('title')
     <title>Settings</title>
@@ -16,7 +16,7 @@
 @section('content')
 
     <div class="content-wrapper" >
-        @include('partials.content-header', ['name' => 'settings', 'key' => 'List'])
+        @include('admin.partials.content-header', ['name' => 'settings', 'key' => 'List'])
 
         <div class="content">
             <div class="container-fluid">

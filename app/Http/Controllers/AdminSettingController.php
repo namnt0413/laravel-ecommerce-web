@@ -8,7 +8,7 @@ use App\Traits\DeleteModelTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class SettingController extends Controller
+class AdminSettingController extends Controller
 {
     //
     use DeleteModelTrait;

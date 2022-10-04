@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.layouts.admin')
 
 @section('title')
     <title>Add product</title>
@@ -15,7 +15,7 @@
 @section('content')
 
     <div class="content-wrapper" >
-        @include('partials.content-header', ['name' => 'product', 'key' => 'Add'])
+        @include('admin.partials.content-header', ['name' => 'product', 'key' => 'Add'])
         <div class="col-md-12">
             {{-- @if ($errors->any())
                 <div class="alert alert-danger">

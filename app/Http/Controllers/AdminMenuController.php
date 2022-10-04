@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Traits\DeleteModelTrait;
 
 
-class MenuController extends Controller
+class AdminMenuController extends Controller
 {
     private $menuRecusive;
     private $menu;

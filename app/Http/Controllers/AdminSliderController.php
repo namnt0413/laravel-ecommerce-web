@@ -9,7 +9,7 @@ use App\Traits\DeleteModelTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class SliderController extends Controller
+class AdminSliderController extends Controller
 {
     use StorageImageTrait , DeleteModelTrait;
     private $slider;

@@ -16,7 +16,7 @@ use Storage;
 use DB;
 
 
-class ProductController extends Controller
+class AdminProductController extends Controller
 {
     use StorageImageTrait , DeleteModelTrait;
     private $category;

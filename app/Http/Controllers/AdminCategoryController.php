@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Components\Recusive;
 use App\Traits\DeleteModelTrait;
 
-class CategoryController extends Controller
+class AdminCategoryController extends Controller
 {
     private $category;
     use DeleteModelTrait;

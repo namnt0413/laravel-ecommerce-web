@@ -1,5 +1,5 @@
 
-@extends('layouts.admin')
+@extends('admin.layouts.admin')
 
 @section('title')
     <title>Trang chu</title>
@@ -9,7 +9,7 @@
 @section('content')
 
     <div class="content-wrapper" >
-        @include('partials.content-header', ['name' => 'menus', 'key' => 'Add'])
+        @include('admin.partials.content-header', ['name' => 'menus', 'key' => 'Add'])
         <div class="content">
             <div class="container-fluid">
                 <div class="row">

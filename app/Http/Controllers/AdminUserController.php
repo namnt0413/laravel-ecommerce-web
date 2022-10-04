@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 use PHPUnit\Exception;
 use DB;
 
-class UserController extends Controller
+class AdminUserController extends Controller
 {
     private $user;
     private $role;

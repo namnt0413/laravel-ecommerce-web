@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.layouts.admin')
 
 @section('title')
     <title>Edit product</title>
@@ -14,7 +14,7 @@
 @section('content')
 
     <div class="content-wrapper"  >
-        @include('partials.content-header', ['name' => 'product', 'key' => 'Edit'])
+        @include('admin.partials.content-header', ['name' => 'product', 'key' => 'Edit'])
          <form action="{{ route('product.update', ['id' => $product->id]) }}" method="post" enctype="multipart/form-data">
             <div class="content">
                 <div class="container-fluid">
