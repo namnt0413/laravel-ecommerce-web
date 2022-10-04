@@ -11,7 +11,7 @@
         @include('partials.content-header', ['name' => 'settings', 'key' => 'Add'])
 
         <div class="content">
-            <div class="container-fluid" style="margin-left:300px !important">
+            <div class="container-fluid" >
                 <div class="row">
                     <div class="col-md-6">
                         <form action="{{ route('settings.store') . '?type=' . request()->type }}" method="post">

@@ -16,7 +16,7 @@
 
         <!-- Main content -->
         <div class="content">
-            <div class="container-fluid"  style="margin-left:300px !important">
+            <div class="container-fluid"  >
                 <div class="row">
                     <div class="col-md-6">
                         <form action="{{ route('categories.store') }}" method="post">

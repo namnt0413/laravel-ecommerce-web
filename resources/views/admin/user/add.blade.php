@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <div class="content-wrapper" style="margin-left:300px !important">
+    <div class="content-wrapper" >
         @include('partials.content-header', ['name' => 'User', 'key' => 'Add'])
 
         <div class="content">
