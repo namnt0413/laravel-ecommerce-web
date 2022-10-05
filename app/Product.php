@@ -10,6 +10,8 @@ class Product extends Model
     const paginates = 5;
     use SoftDeletes;
     protected $guarded = [];
+    protected $table = 'products';
+
     public function images() {
         return $this->hasMany(ProductImage::class, 'product_id');
     }

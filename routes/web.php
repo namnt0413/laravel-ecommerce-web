@@ -11,13 +11,7 @@
 |
 */
 
-// Route::get('/admin', 'AdminController@loginAdmin');
-// Route::post('/admin', 'AdminController@postLoginAdmin');
-
-Route::get('/home', function () {
-    return view('home');
-});
-
+//server
 Route::prefix('admin')->group(function () {
 
     Route::get('/', [
@@ -220,7 +214,59 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+
+// client
+Route::get('/', 'HomeController@index');
+Route::get('add-to-cart/{id}', 'CartController@addToCart')->name('addToCart') ;
+Route::get('show-cart', 'CartController@showCart')->name('showCart') ;
+Route::get('update-cart', 'CartController@updateCart')->name('updateCart') ;
+Route::get('delete-cart', 'CartController@deleteCart')->name('deleteCart') ;
+
+Route::get('product-modal/{id}', 'HomeController@productModal')->name('productModal') ;
+
+Route::prefix('user')->group(function () {
+    Route::get('login', 'UserController@login')->name('login') ;
+    Route::get('logout', 'UserController@logout')->name('logout') ;
+    Route::get('signup', 'UserController@signup')->name('signup') ;
+    Route::post('postLogin', 'UserController@postLogin')->name('postLogin') ;
+});
+
+Route::prefix('home')->group(function () {
+    Route::get('/', [
+   'as' => 'home.index',
+       'uses' => 'HomeController@index'
+   ]);
+});
+
+Route::prefix('product')->group(function () {
+    Route::get('/', [
+   'as' => 'product.index',
+       'uses' => 'ProductController@index'
+   ]);
+   Route::get('/category/{slug}/{id}', [
+    'as' => 'product.category',
+        'uses' => 'ProductController@category'
+    ]);
+    Route::get('/{id}', [
+        'as' => 'product.detail',
+            'uses' => 'ProductController@detail'
+        ]);
+});
+
+Route::prefix('cart')->group(function () {
+    Route::get('/', [
+   'as' => 'cart.index',
+       'uses' => 'CartController@index'
+   ]);
+});
+
+Route::prefix('checkput')->group(function () {
+    Route::get('/', [
+   'as' => 'checkout.index',
+       'uses' => 'CheckoutController@index'
+   ]);
 });
