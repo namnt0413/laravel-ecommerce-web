@@ -213,12 +213,12 @@
     }
 
     // hard code dropdown menu child
-    $('#karlDropdown-9').on('click', function () {
-        if( $('.dropdown-menu-child-9').hasClass("hidden") ){
-            $('.dropdown-menu-child-9').removeClass("hidden");
+    $('#karlDropdown-2').on('click', function () {
+        if( $('.dropdown-menu-child-2').hasClass("hidden") ){
+            $('.dropdown-menu-child-2').removeClass("hidden");
         }
         else {
-            $('.dropdown-menu-child-9').addClass("hidden");
+            $('.dropdown-menu-child-2').addClass("hidden");
         }
     })
     $('#karlDropdown-1').on('click', function () {
@@ -229,12 +229,20 @@
             $('.dropdown-menu-child-1').addClass("hidden");
         }
     })
-    $('#karlDropdown-16').on('click', function () {
-        if( $('.dropdown-menu-child-16').hasClass("hidden") ){
-            $('.dropdown-menu-child-16').removeClass("hidden");
+    $('#karlDropdown-3').on('click', function () {
+        if( $('.dropdown-menu-child-3').hasClass("hidden") ){
+            $('.dropdown-menu-child-3').removeClass("hidden");
         }
         else {
-            $('.dropdown-menu-child-16').addClass("hidden");
+            $('.dropdown-menu-child-3').addClass("hidden");
+        }
+    })
+    $('#karlDropdown-17').on('click', function () {
+        if( $('.dropdown-menu-child-17').hasClass("hidden") ){
+            $('.dropdown-menu-child-17').removeClass("hidden");
+        }
+        else {
+            $('.dropdown-menu-child-17').addClass("hidden");
         }
     })
 

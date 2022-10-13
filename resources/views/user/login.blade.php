@@ -36,8 +36,8 @@
                     @csrf
                     <div class="row">
                         <img  class="login100-form-circle-logo" src="{{ asset('login/images/icons/circle_logo.png')}}" />
-                        <h2 class="login100-form-header">SIXTEEN <em style= "font-style: normal; color: #f33f3f;"
-                        >CLOTHING</em></h2>
+                        <h2 class="login100-form-header">KARL <em style= "font-style: normal; color: #f33f3f;"
+                        >FASHION</em></h2>
                     </div>
 					<span class="login100-form-title p-b-43">
 						Login to continue

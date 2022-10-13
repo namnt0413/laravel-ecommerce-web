@@ -643,11 +643,13 @@ img {
 .dropdown-menu-child-1.hidden {
     display: none;
 }
-.dropdown-menu-child-9.hidden {
+.dropdown-menu-child-2.hidden {
     display: none;
 }
-
-.dropdown-menu-child-16.hidden {
+.dropdown-menu-child-3.hidden {
+    display: none;
+}
+.dropdown-menu-child-17.hidden {
     display: none;
 }
 
@@ -903,6 +905,9 @@ img {
 /* -----------------------------
 :: 9.0 Quickview Modal Area CSS
 ----------------------------- */
+.modal-body {
+    border: 1px solid #ddd;
+}
 
 #quickview button.close {
     box-shadow: none;
